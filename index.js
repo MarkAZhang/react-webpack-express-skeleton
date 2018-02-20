@@ -11,4 +11,6 @@ app.get('/', function (req, res) {
   res.sendFile(path.resolve(__dirname, 'front-end/index.html'));
 })
 
+console.log('Listening at port 3000!')
+
 app.listen(3000)
