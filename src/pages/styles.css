@@ -1,3 +1,4 @@
 .helloWorld {
+  @mixin font heroTitle;
   color: blue;
 }
