@@ -11,6 +11,11 @@ Uses:
 * Express
 * PostCSS
 
+# Create a new project
+```
+$ ./new-project.sh my-app
+```
+
 # Development
 
 We use an Express server for local development.
