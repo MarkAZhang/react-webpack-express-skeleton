@@ -1,5 +1,4 @@
-FROM smebberson/alpine-nginx-nodejs:4.4.0
-
+FROM node:9-alpine as builder
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
@@ -11,11 +10,17 @@ RUN yarn
 
 COPY postcss.config.js .
 COPY webpack.config.js .
-COPY index.html .
 COPY src src
 RUN npm run build
 
+# Second stage of build.
+FROM nginx:1-alpine
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+
 COPY nginx.conf /etc/nginx/nginx.conf
+COPY index.html /usr/src/app
+COPY --from=builder /usr/src/app/dist dist
 
 EXPOSE 80
 
