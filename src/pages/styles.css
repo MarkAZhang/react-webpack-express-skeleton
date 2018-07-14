@@ -1,4 +1,32 @@
+@import 'vars.css';
+
 .helloWorld {
   @mixin font heroTitle;
   color: blue;
+  margin-bottom: 50px;
+}
+
+.header {
+  @mixin font heading;
+}
+
+.dropdown {
+  width: 200px;
+  background-color: $white;
+  border: 1px solid $gray-light-1;
+  box-shadow: $box-shadow;
+
+  .option {
+    padding: 10px 20px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $gray-light-1;
+    }
+  }
+}
+
+.dropdownContainer {
+  height: 40px;
+  width: 200px;
 }
