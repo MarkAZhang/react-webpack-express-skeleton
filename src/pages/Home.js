@@ -55,9 +55,9 @@ class Home extends Component<Props, State> {
     const { open, selectedOption, text } = this.state
 
     return (
-      <div>
+      <div className={cs.bgRect}>
         <div className={cs.helloWorld}>{text}</div>
-        <div>This is a dropdown</div>
+        <div className={cs.header}>This is a dropdown</div>
         <div className={cs.dropdownContainer}>
           <Dropdown
             open={open}

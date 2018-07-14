@@ -6,7 +6,7 @@ const fontStyles = {
   },
   heroTitle: {
     fontSize: 60,
-    fontWeight: 700,
+    fontWeight: 300,
   },
   heading: {
     fontSize: 28,

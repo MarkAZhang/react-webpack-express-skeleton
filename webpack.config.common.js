@@ -30,7 +30,7 @@ var config = {
       },
       {
         test: /\.(png|svg|eot|woff2?|ttf|jpg|gif)/,
-        loader: 'url-loader?limit=5000&publicPath=/dist/',
+        loader: 'url-loader?limit=5000&publicPath=/static/',
       },
     ]
   }
