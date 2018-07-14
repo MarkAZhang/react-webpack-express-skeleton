@@ -1,5 +1,5 @@
 # react-webpack-express-skeleton
-Basic skeleton for front-end static application with React, Webpack, and Express. 
+Basic skeleton for web application with React, Webpack, and Express. 
 
 This is my basic set-up that I use to quickly bootstrap personal projects.
 
@@ -28,7 +28,7 @@ $ npm run start
 
 # Production
 
-We use an nginx Docker container for production.
+If our website is front-end only, we can use an nginx Docker container for production.
 
 ```
 # Build the image.
