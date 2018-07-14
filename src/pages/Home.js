@@ -1,3 +1,4 @@
+// @flow
 import { Component } from 'react'
 
 import Dropdown from '~/components/Dropdown'
@@ -10,8 +11,16 @@ const DROPDOWN_OPTIONS = [
   'three',
 ]
 
+type Props = {}
+
+type State = {
+  text: string,
+  selectedOption: string,
+  open: boolean,
+}
+
 // TODO(mark): Replace placeholder header with real navigation
-class Home extends Component {
+class Home extends Component<Props, State> {
   state = {
     text: '',
     selectedOption: 'one',
@@ -43,12 +52,12 @@ class Home extends Component {
   }
 
   render() {
-    const { open, selectedOption } = this.state
+    const { open, selectedOption, text } = this.state
 
     return (
       <div>
-        <div className={cs.helloWorld}>{this.state.text}</div>
-        <div className={cs.header}>This is a dropdown</div>
+        <div className={cs.helloWorld}>{text}</div>
+        <div>This is a dropdown</div>
         <div className={cs.dropdownContainer}>
           <Dropdown
             open={open}
