@@ -11,6 +11,10 @@ app.get('/', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../index.html'));
 })
 
-console.log('Listening at port 3000!')
-
-app.listen(3000)
+if (process.env.NODE_ENV === 'production') {
+  console.log('Listening at port 80!')
+  app.listen(80)
+} else {
+  console.log('Listening at port 8888!')
+  app.listen(8888)
+}
