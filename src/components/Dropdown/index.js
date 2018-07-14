@@ -14,10 +14,6 @@ type Props = {
   children: React.Node,
 }
 
-const temp = (a, b, c) => {
-  console.log('here', arguments)
-}
-
 class Dropdown extends React.Component<Props> {
   toggle = () => {
     const { onChange, open } = this.props
@@ -33,8 +29,6 @@ class Dropdown extends React.Component<Props> {
     const {
       open, label, children,
     } = this.props
-
-    temp(1, 2, 3, 4, 5)
 
     return (
       <div className={cs.dropdownContainer}>
