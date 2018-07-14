@@ -1,4 +1,3 @@
-dev_build
-prod_build
-server_build
+frontend-dist
+backend-dist
 node_modules

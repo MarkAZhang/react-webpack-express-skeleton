@@ -3,12 +3,7 @@ import path from 'path'
 
 var app = express()
 
-let PATH_DIST
-if (process.env.NODE_ENV === 'production') {
-  PATH_DIST = path.resolve(__dirname, '../prod_build')
-} else {
-  PATH_DIST = path.resolve(__dirname, '../dev_build')
-}
+const PATH_DIST = path.resolve(__dirname, '../frontend-dist')
 
 app.use('/static', express.static(PATH_DIST))
 

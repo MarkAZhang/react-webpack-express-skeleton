@@ -7,14 +7,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.config.dev.js",
     "build-prod": "webpack --config webpack.config.prod.js",
-    "start": "node server_build/index.js",
-    "start-prod": "export NODE_ENV=production && node server_build/index.js",
+    "start": "node backend-dist/index.js",
+    "start-prod": "export NODE_ENV=production && node backend-dist/index.js",
     "watch": "webpack --config webpack.config.dev.js --watch",
-    "lint:js": "eslint src/**/*.js",
+    "lint:js": "eslint frontend/**/*.js",
     "test:js": "jest",
     "flow": "flow",
     "pre-commit": "npm run lint:js && npm run flow && npm run test:js",
-    "build-server": "babel server -d server_build"
+    "build-server": "babel backend -d backend-dist"
   },
   "author": "",
   "license": "ISC",
@@ -71,7 +71,7 @@
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|less)$": "identity-obj-proxy",
-      "^~(.*)$": "<rootDir>/src$1"
+      "^~(.*)$": "<rootDir>/frontend$1"
     },
     "setupTestFrameworkScriptFile": "<rootDir>/test-setup.js"
   }

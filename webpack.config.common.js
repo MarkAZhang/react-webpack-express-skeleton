@@ -1,6 +1,6 @@
 var path = require('path');
 
-var LIB_DIR = path.resolve(__dirname, 'src');
+var LIB_DIR = path.resolve(__dirname, 'frontend');
 
 var config = {
   resolve: {
