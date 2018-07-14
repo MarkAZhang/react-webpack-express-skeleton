@@ -1,6 +1,6 @@
 import { shallow } from 'enzyme'
 
-import Icon from '~/components/basic/Icon'
+import Icon from '~/components/Icon'
 
 import { InnerDropdown } from '../index'
 
