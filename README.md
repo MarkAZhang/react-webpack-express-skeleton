@@ -1,41 +1,51 @@
 # react-webpack-express-skeleton
-Basic skeleton for web application with React, Webpack, and Express. 
+Basic skeleton for a full-stack web application.
 
-This is my basic set-up that I use to quickly bootstrap personal projects.
-
-Uses:
+Includes:
 * React
-* Babel
-* Webpack
-* Eslint
-* Express
 * PostCSS
+* Babel and Webpack
+* Eslint, Jest, and Flow
+* Express
 
-# Create a new project
+Back-end is transformed using Babel only.
+Front-end is transformed with Webpack.
+
+# Create a new project in a sibling directory.
 ```
 $ ./new-project.sh my-app
 ```
 
 # Development
 
-We use an Express server for local development.
-
 ```
-$ npm install
-$ npm run build
-$ npm run start
+$ yarn
+$ yarn run build
+$ yarn run build-server
+$ yarn run start
 ```
 
 # Production
 
-If our website is front-end only, we can use an nginx Docker container for production.
-
 ```
-# Build the image.
+$ yarn run build-prod
+$ yarn run build-server
+$ yarn run start-prod
+```
+
+And if you want to deploy with Docker:
+```
 $ docker build -t my-app .
 
 # Transfer the image to your production server.
 
-# Run the image.
 $ docker run -d -p 80:80 my-app
+```
+
+# Pre-commit hook
+
+Runs eslint, jest, and flow.
+
+```
+$ yarn run pre-commit
 ```
