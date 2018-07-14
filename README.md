@@ -39,6 +39,3 @@ $ docker build -t my-app .
 # Run the image.
 $ docker run -d -p 80:80 my-app
 ```
-
-# TODO
-Redis for session storage.
