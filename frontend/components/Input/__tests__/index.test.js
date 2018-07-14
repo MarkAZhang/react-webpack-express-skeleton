@@ -21,11 +21,11 @@ describe('input', () => {
       <Input className='specialClass' onChange={onChangeFn} value='abc' />
     )
 
-    wrapper.simulate('change', { target: { value: 'new value' }})
+    wrapper.simulate('change', { currentTarget: { value: 'new value' }})
     expect(wrapper.prop('value')).toBe('new value')
-    wrapper.simulate('change', { target: { value: 'new value 2' }})
+    wrapper.simulate('change', { currentTarget: { value: 'new value 2' }})
     expect(wrapper.prop('value')).toBe('new value 2')
-    wrapper.simulate('change', { target: { value: 'new value 3' }})
+    wrapper.simulate('change', { currentTarget: { value: 'new value 3' }})
     expect(wrapper.prop('value')).toBe('new value 3')
 
     expect(onChangeFn).toBeCalledTimes(0)
@@ -43,13 +43,13 @@ describe('input', () => {
       <Input className='specialClass' onChange={onChangeFn} value='abc' />
     )
 
-    wrapper.simulate('change', { target: { value: 'new value' }})
+    wrapper.simulate('change', { currentTarget: { value: 'new value' }})
     expect(wrapper.prop('value')).toBe('new value')
 
     wrapper.setProps({ value: 'passed value' })
     expect(wrapper.prop('value')).toBe('passed value')
 
-    wrapper.simulate('change', { target: { value: 'new value 2' }})
+    wrapper.simulate('change', { currentTarget: { value: 'new value 2' }})
     expect(wrapper.prop('value')).toBe('new value 2')
   })
 
@@ -60,12 +60,12 @@ describe('input', () => {
       <Input className='specialClass' value='abc' />
     )
 
-    wrapper.simulate('change', { target: { value: 'new value' }})
+    wrapper.simulate('change', { currentTarget: { value: 'new value' }})
     expect(wrapper.prop('value')).toBe('new value')
 
     expect(inputBlur).toBeCalledTimes(0)
 
-    wrapper.simulate('keydown', { key: 'Enter', target: { blur: inputBlur }})
+    wrapper.simulate('keydown', { key: 'Enter', currentTarget: { blur: inputBlur }})
 
     expect(inputBlur).toBeCalledTimes(1)
   })

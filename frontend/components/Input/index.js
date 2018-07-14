@@ -1,3 +1,4 @@
+// @flow
 import { Component } from 'react'
 
 type Props = {
@@ -6,7 +7,11 @@ type Props = {
   className: string,
 }
 
-class Input extends Component<Props> {
+type State = {
+  value: string,
+}
+
+class Input extends Component<Props, State> {
   constructor(props: Props) {
     super(props)
     const { value } = props
@@ -24,17 +29,17 @@ class Input extends Component<Props> {
 
   updateInternalValue = (e: SyntheticInputEvent<HTMLInputElement>) => {
     this.setState({
-      value: e.target.value,
+      value: e.currentTarget.value,
     })
   }
 
   onFocus = (e: SyntheticInputEvent<HTMLInputElement>) => {
-    e.target.select()
+    e.currentTarget.select()
   }
 
   onKeyDown = (e: SyntheticKeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
-      e.target.blur()
+      e.currentTarget.blur()
     }
   }
 
